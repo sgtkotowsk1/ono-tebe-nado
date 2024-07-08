@@ -66,7 +66,7 @@ a {text-underline-offset: 5px;} /* чуть опустили подчеркив�
     background-repeat: no-repeat;
     position: relative;
     inset: 0; 
-    z-index: -1;
+    z-index: 0;
     
 }
 
@@ -75,13 +75,13 @@ a {text-underline-offset: 5px;} /* чуть опустили подчеркив�
     background-color: rgb(0 0 0 / 0.6);
     position: absolute;
     inset: 0;
-    z-index: 0;
+    z-index: 1;
     
 }
 .cover__title {
     /*поверх всего расположили контент*/
     position: relative;
-    z-index: 1;
+    z-index: 2;
     padding: 165px 50px 115px 50px;
 }
 
@@ -117,7 +117,7 @@ a {text-underline-offset: 5px;} /* чуть опустили подчеркив�
     justify-content: space-between;
     align-items: center;
     position: relative;
-    z-index: 1;
+    z-index: 2;
     padding: 0 50px 51px 78px;
 }
 
@@ -140,6 +140,11 @@ a {text-underline-offset: 5px;} /* чуть опустили подчеркив�
     text-transform: uppercase;
 }
 
+.footer__menu_item:hover, .header__logo:hover, .header__menu_item:hover, .card:hover, .bet-button:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 1s;
+}
 
 /*-------------------------------------------------------------LOTS----------------------------------------------------------------------------------------------------*/
 
@@ -181,6 +186,7 @@ a {text-underline-offset: 5px;} /* чуть опустили подчеркив�
     height: 100%;
 }
 
+
 .card__link {text-decoration: none;} /* убрали все признаки списка у карточек*/
 
 .card__title {
@@ -188,7 +194,7 @@ a {text-underline-offset: 5px;} /* чуть опустили подчеркив�
     color: #FFFFFF;
     font-size: 22px;
     line-height: 1.2;
-    z-index: 1;
+    z-index: 2;
     font-weight: bold;
     text-decoration: underline;
     text-transform: uppercase;
@@ -199,7 +205,7 @@ a {text-underline-offset: 5px;} /* чуть опустили подчеркив�
     color: #FFFFFF;
     font-size: 20px;
     line-height: 1.2;
-    z-index: 1;
+    z-index: 2;
     font-weight: normal; 
 }
 
@@ -280,8 +286,6 @@ a {text-underline-offset: 5px;} /* чуть опустили подчеркив�
     letter-spacing: 0.005em;
     font-weight: 400;
 }
-
-.about__text_part_2 {letter-spacing: -0.003em;} /* попытка выровнить текст не пытка
 
 
 /*-------------------------------------------------------------FOOTER----------------------------------------------------------------------------------------------------*/
