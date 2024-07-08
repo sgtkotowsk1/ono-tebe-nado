@@ -1,1 +1,322 @@
-/* место для вашего кода */
+html {
+    scroll-behavior: smooth; /*во всем документе будет плавный скролл при переходе по ссылкам*/
+}
+
+body {
+    /* используем преимущественно этот шрифт */
+    font-family: "Raleway", sans-serif;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 1.2;
+    
+}
+
+/*-------------------------------------------------------------HEADER----------------------------------------------------------------------------------------------------*/
+
+.header {
+    /*шапку сделали в виде сетки, чтобы изображение заняло сколько ему нужно и расположилось по центру*/
+    padding: 92px 24px 96px 24px; 
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr min-content 1fr;  
+}
+
+.header__menu_list {
+    /* меню сдалил флекс контейром и расположили элементы как на макете с помощью PerfectPixel*/
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 34px;
+    padding-left: 27px;        
+}
+
+
+
+.header__menu_item {
+    list-style: circle;
+    font-size: 18px;
+    line-height: 1.35;  
+}
+
+.header__menu-item_active{list-style: none;} /*у активной страницы убрали подчеркивание*/
+
+a {text-underline-offset: 5px;} /* чуть опустили подчеркивания у ссылок */
+
+.header__logo {width: 130px;}
+
+.address {
+    /*расположили блок с адресами в 3 колонке и задали максимальную ширину этому блоку для переноса текста*/
+    max-width: 265px;
+    font-size: 18px;
+    line-height: 1.35;
+    font-style: normal;
+    justify-self: end;
+    align-self: center;  
+}
+
+
+/*-------------------------------------------------------------COVER----------------------------------------------------------------------------------------------------*/
+    
+
+.cover {
+    /*сделали фоновую картинку и расположили ее на самый дальний от нас слой*/
+    background-image: url('../images/cover.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    inset: 0; 
+    z-index: -1;
+    
+}
+
+.overlay {
+    /*поверх картинки положили полупрозрачный фон*/
+    background-color: rgb(0 0 0 / 0.6);
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    
+}
+.cover__title {
+    /*поверх всего расположили контент*/
+    position: relative;
+    z-index: 1;
+    padding: 165px 50px 115px 50px;
+}
+
+.aligned-text {
+    /*текст сделали блочным, чтобы каждый внешний спан начинался под предыдущим*/
+    display: block;
+    font-family: "Raleway", sans-serif;
+    font-size: 100px;  
+    font-weight: bold;
+    line-height: 1.15;
+    color: #FFFFFF;
+    letter-spacing: 30px; 
+    text-transform: uppercase;
+    margin-bottom: 10px;
+
+}
+
+.letter-spacing-extended{letter-spacing: 60px;} /*увеличенное расстояние между буквами*/
+
+.aligned-text_center{text-align: center;}
+
+.aligned-text_right {text-align: right}
+
+.no-letter-spacing {letter-spacing: 0px;}
+
+
+.cover__description {
+    font-family: "Raleway", sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    padding: 0 50px 51px 78px;
+}
+
+.cover__description-text {
+    
+    line-height: 1.28;
+    text-transform: uppercase;
+    word-spacing: 19px;
+    
+}
+
+.bet-button {
+    /* красивая кнопочка для доната с прозрачным фоном*/
+    width: 256px;
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    height: 50px;
+    font-size: 22px;
+    text-transform: uppercase;
+}
+
+
+/*-------------------------------------------------------------LOTS----------------------------------------------------------------------------------------------------*/
+
+.lots {
+    /*блок с хидером, лотами и ссылкой*/
+    display: flex;
+    flex-direction: column;
+    margin: 178px 24px 146px 24px;
+    gap: 25px 0;
+    
+}
+
+.lots__heading {
+    font-family: 'Raleway', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    margin-left: 40px;
+   
+}
+
+.lots__card-list {
+    /* сетка карточек*/
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    list-style-type: none;   
+}
+
+
+.card {
+    /*сама карточка с текстом, картинкой, и полупрозрачным слоем*/
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 53px 40px 48px 40px;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.card__link {text-decoration: none;} /* убрали все признаки списка у карточек*/
+
+.card__title {
+    /*текст поверх фона и заднего слоя*/
+    color: #FFFFFF;
+    font-size: 22px;
+    line-height: 1.2;
+    z-index: 1;
+    font-weight: bold;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+.card__text {
+    /*текст поверх фона и заднего слоя*/
+    color: #FFFFFF;
+    font-size: 20px;
+    line-height: 1.2;
+    z-index: 1;
+    font-weight: normal; 
+}
+
+/*ниже добавили 3 картинки карточкам и расположили согласно макету*/
+
+.card_type_film {
+    background-image: url(../images/card-lot-01.jpg);
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    inset: 0;  
+}
+
+.card_type_book{
+    background-image: url(../images/card-lot-02.jpg);
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    inset: 0;
+}
+
+.card_type_picture{
+    background-image: url(../images/card-lot-03.jpg);
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    inset: 0;
+}
+
+.lots__look-more-link {
+    margin-left: 40px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-top: 5px;
+}
+
+
+/*-------------------------------------------------------------ABOUT----------------------------------------------------------------------------------------------------*/
+.about {
+    /* сделали сетку из 2 колонок. Ширина первой равна ширине карточки. Остальное место отдали второй колонке.*/
+    display: grid;
+    grid-template-columns: 334px auto;
+    gap: 25px;
+    padding: 0 24px 0 24px;
+}
+.about__logo {
+    background-color: #000;
+    border-radius: 50%;
+    margin: 35px 0px 0px 47px;
+    width: 240px;
+    height: 240px;
+    display: flex;   
+    justify-content: center;
+    align-items: center;
+}
+
+.about__logo-image {
+    width: 141px;
+    height: 141px;
+    
+}
+.about__title {
+    font-weight: bold;
+    font-size: 40px;
+    text-transform: uppercase;
+    margin-top: 136px;
+    margin-bottom: 100px;
+}
+
+.about__text {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    letter-spacing: 0.005em;
+    font-weight: 400;
+}
+
+.about__text_part_2 {letter-spacing: -0.003em;} /* попытка выровнить текст не пытка
+
+
+/*-------------------------------------------------------------FOOTER----------------------------------------------------------------------------------------------------*/
+
+.footer {
+    display: flex;
+    padding: 180px 50px 88px 50px;
+    justify-content: space-between;
+}
+
+
+.footer__social-list {
+    display: flex;
+    gap: 48px;
+}
+
+.footer__menu {
+    display: flex;
+    justify-self: end;
+    margin-right: 22px;  
+}
+
+.footer__menu_item { 
+    list-style-type: none;
+    text-align: center;
+    font-size: 18px;
+
+}
+
+.footer__social-list-item {
+    width: 48px;
+}
+
+.footer__social-list {
+    list-style: none;
+    gap: 0 48px;
+    justify-self: center;
+}
